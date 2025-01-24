@@ -105,6 +105,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 ### Author
 
-Developed with ❤️ by [Your Name](https://github.com/harsh-sangwan2002).
+Developed with ❤️ by [Harsh Sangwan](https://github.com/harsh-sangwan2002).
 
 Feel free to reach out with any questions or feedback!
