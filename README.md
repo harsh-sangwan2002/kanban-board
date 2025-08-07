@@ -2,6 +2,9 @@
 
 A simple and intuitive Kanban Board web application built using HTML, CSS, and JavaScript. This project allows users to create tasks, delete tasks, and apply filters to organize and manage their workflow efficiently.
 
+## Live Website
+[Live Demo](https://harsh-sangwan2002.github.io/kanban-board/)
+
 ## Features
 
 - **Create Task**: Add new tasks to the board with ease.
