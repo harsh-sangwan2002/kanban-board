@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Kanban Board</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="filters">
+            <div class="box priority p1" data-priority="1"></div>
+            <div class="box priority p2" data-priority="2"></div>
+            <div class="box priority p3" data-priority="3"></div>
+            <div class="box priority p4" data-priority="4"></div>
+            <div class="box priority p5 show-all" data-priority="5">Show All</div>
+        </div>
+        <div class="actions">
+            <div class="icon create-icon">+</div>
+            <div class="icon delete-icon">X</div>
+        </div>
+    </header>
+
+    <!-- Create Task Modal -->
+    <div class="task-modal hide">
+        <div class="close-btn">✕</div>
+
+        <div class="left-section">
+            <textarea rows="25" placeholder="Enter your task..."></textarea>
+        </div>
+        <div class="right-section">
+            <div class="priority p1 selected" data-priority="1"></div>
+            <div class="priority p2" data-priority="2"></div>
+            <div class="priority p3" data-priority="3"></div>
+            <div class="priority p4" data-priority="4"></div>
+        </div>
+    </div>
+
+
+    <!-- Task Container -->
+    <div class="task-container">
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

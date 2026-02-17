@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    min-height: 100vh;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    align-items: center;
+}
+
+.header .actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.header .create-icon,
+.header .delete-icon {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    width: 70px;
+    height: 50px;
+    font-size: 1.3rem;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.header .delete-icon {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+.header .create-icon:hover,
+.header .delete-icon:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.header .filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header .filters .box {
+    width: 3.5rem;
+    height: 2.5rem;
+    border-radius: 5px;
+}
+
+.header .filters .p5 {
+    background-color: lightcoral;
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* ================= MODAL ================= */
+
+.task-modal {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ff4b2b;
+    transition: 0.3s ease;
+}
+
+.close-btn:hover {
+    transform: rotate(90deg) scale(1.2);
+}
+
+.hide {
+    display: none;
+}
+
+/* Left Section */
+
+.task-modal .left-section {
+    flex: 3;
+    padding: 2rem;
+}
+
+.task-modal textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 1.2rem;
+}
+
+/* Right Section */
+
+.task-modal .right-section {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Priority Colors */
+.priority {
+    flex: 1;
+    cursor: pointer;
+}
+
+.p1 {
+    background: #ff6b81;
+}
+
+.p2 {
+    background: #5352ed;
+}
+
+.p3 {
+    background: #00d2d3;
+}
+
+.p4 {
+    background: #ffa502;
+}
+
+.selected {
+    border: 2px solid #fff;
+}
+
+/* ================= TASK CONTAINER ================= */
+
+.task-container {
+    padding: 4rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Task Card */
+
+.task {
+    width: 150px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Priority Bar */
+.task-priority {
+    font-size: 0.5rem;
+    padding: 5px;
+}
+
+/* Content */
+.task-content {
+    padding: 5px;
+    min-height: 120px;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* ID */
+.task-id {
+    padding: 5px;
+    background: #111;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.task i {
+    cursor: pointer;
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+}
+
+.task i:hover {
+    color: red;
+}
