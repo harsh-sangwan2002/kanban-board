@@ -30,6 +30,24 @@ const taskModal = document.querySelector('.task-modal');
 const taskCloseButton = document.querySelector('.close-btn');
 const prioritiesList = document.querySelectorAll('.task-modal .priority');
 const textareaRef = taskModal.querySelector('textarea');
+const deleteAllBtn = document.querySelector('.delete-all');
+const popupOverlay = document.getElementById('popupOverlay');
+const yesBtn = document.querySelector('.yes-btn');
+const noBtn = document.querySelector('.no-btn');
+
+deleteAllBtn.addEventListener('click', () => {
+    popupOverlay.style.display = 'flex';
+});
+
+noBtn.addEventListener('click', () => {
+    popupOverlay.style.display = 'none';
+});
+
+yesBtn.addEventListener('click', () => {
+    tasks.splice(0);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    location.reload(); // or re-render tasks
+});
 
 renderTasks(tasks);
 
@@ -136,12 +154,45 @@ function createTask(id, priority, content) {
             <div class="task-priority priority p${priority}" data-priority="${priority}">${priority}</div>
             <div class="task-id">#${id}</div>
             <div class="task-content">
-                ${content}
+                <textarea readonly>${content}</textarea>
             </div>
-            <i class="fa-solid fa-trash delete-icon"></i>
+            <div class="icons">
+                <i class="fa-solid fa-lock lock-icon"></i>
+                <i class="fa-solid fa-trash delete-icon"></i>
+            </div>
     `;
 
+    const taskContent = taskRef.querySelector('.task-content textarea');
+    const lockIcon = taskRef.querySelector('.lock-icon');
     const deleteIcon = taskRef.querySelector('.delete-icon');
+    const currTask = tasks.find(task => task.id == id);
+
+    taskContent.addEventListener('input', e => {
+        const updatedText = e.target.value.split("\n")[0];
+        currTask.content = updatedText;
+    })
+
+    taskContent.addEventListener('keyup', e => {
+        if (e.key == "Enter") {
+            renderTasks(tasks);
+            saveToLocalStorage();
+        }
+    })
+
+    lockIcon.addEventListener('click', e => {
+
+        if (lockIcon.classList.contains('fa-lock')) {
+            taskContent.removeAttribute('readonly');
+            lockIcon.classList.remove('fa-lock');
+            lockIcon.classList.add('fa-lock-open');
+        }
+
+        else {
+            taskContent.setAttribute('readonly', "true");
+            lockIcon.classList.add('fa-lock');
+            lockIcon.classList.remove('fa-lock-open');
+        }
+    })
 
     deleteIcon.addEventListener('click', (e) => {
         removeTask(id);
