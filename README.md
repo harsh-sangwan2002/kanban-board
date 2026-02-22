@@ -4,6 +4,11 @@ A simple and interactive **Kanban Board** built using **Vanilla HTML, CSS, and J
 
 This project allows users to manage tasks efficiently with features like adding tasks, editing tasks, locking/unlocking tasks, deleting tasks, and persisting data using **localStorage**.
 
+## 🚀 Live Demo
+
+🌐 **View Project Here:**  
+👉 [Click to Open Kanban Board](https://harsh-sangwan2002.github.io/kanban-board/)
+
 ---
 
 ## 🚀 Features
